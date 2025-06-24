@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AMATEUR POLISH RACING TEAM - Styl F1</title>
+<style>
+.badge {
+  position: relative;
+  top: -3px;          /* podnosi lekko do góry */
+  left: -5px;         /* przesuwa trochę w lewo */
+  display: inline-block;
+  background: #f44336;
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 0 4px rgba(255, 0, 0, 0.6);
+}
+
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background: #121212;
+    color: #e0e0e0;
+  }
+
+  body {
+    background: linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%);
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 25px 30px;
+    background: #1f1f1f;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.9);
+    border: 1px solid #444;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  header h1 {
+    font-size: 2.8rem;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: 'Orbitron', sans-serif;
+    user-select: none;
+  }
+
+  nav {
+    display: flex;
+    gap: 30px;
+  }
+
+  nav a {
+    color: #bbbbbb;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    user-select: none;
+  }
+
+  nav a:hover,
+  nav a.active {
+    color: #f44336; /* bardziej subtelna czerwień */
+    border-bottom: 2px solid #f44336;
+  }
+
+  /* Sekcje */
+  section {
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-left: 6px solid #f44336;
+    padding-left: 10px;
+    user-select: none;
+  }
+
+  /* Karty kierowców */
+  .driver-card {
+    display: flex;
+    background: #292929;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+    margin-bottom: 25px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .driver-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(244, 67, 54, 0.8);
+  }
+
+  .driver-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f44336;
+    margin-right: 25px;
+    flex-shrink: 0;
+  }
+
+  .driver-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .driver-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    font-weight: 900;
+    color: #fff;
+  }
+
+  .driver-info p {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    color: #ccc;
+  }
+
+  /* Karty wyścigów */
+  .race-card {
+    background: #292929;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+    padding: 20px;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .race-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(244, 67, 54, 0.8);
+  }
+
+  .race-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 900;
+    color: #fff;
+  }
+
+  .race-card p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #ccc;
+  }
+
+  /* Kontakt */
+  #kontakt {
+    text-align: center;
+  }
+
+  #kontakt p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #ddd;
+  }
+
+  #kontakt a {
+    color: #f44336;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+  }
+
+  #kontakt a:hover {
+    color: #ff7961;
+  }
+
+  /* Stopka */
+  footer {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 50px;
+    font-style: italic;
+    user-select: none;
+  }
+
+  /* Responsywność */
+  @media (max-width: 768px) {
+    .driver-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .driver-photo {
+      margin: 0 0 15px 0;
+    }
+
+    .driver-info {
+      align-items: center;
+    }
+
+    nav {
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AMATEUR POLISH RACING TEAM</h1>
+      <nav>
+        <a href="#kierowcy" class="active">Kierowcy</a>
+        <a href="#wyscigi">Wyścigi</a>
+        <a href="#drivers">iRacing & Karting</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </header>
+
+    <section id="kierowcy">
+      <h2>Nasi Kierowcy</h2>
+      <div class="driver-card">
+        <img src="moje-zdjecie.jpg" alt="Jan Chlebosz" class="driver-photo" />
+        <div class="driver-info">
+          <h3>Jan Chlebosz <span class="badge">Szef Zespołu</span></h3>
+          <p><strong>Idol:</strong> Ayrton Senna</p>
+          <p><strong>Pasja:</strong> Karting i Sim racing</p>
+          <p><strong>Instagram:</strong> <a href="https://instagram.com/endaro796" target="_blank">@endaro796</a></p>
+
+
+        </div>
+      </div>
+    </section>
+
+    <section id="wyscigi">
+      <h2>Nasze Wyścigi</h2>
+      <div class="race-card">
+        <h3>iRacing Season 2025</h3>
+        <p>Startujemy w iRacing, ścigamy się na serio, ale z dystansem.</p>
+        <p>Jesteśmy amatorskim zespołem i planujemy też karting (jak się uda).</p>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <h2>Kontakt</h2>
+      <p>📞 Telefon: <a href="tel:+48880305495">880 305 495</a></p>
+      <p>📧 Email: <a href="mailto:aprtiracing@gmail.com">aprtiracing@gmail.com</a></p>
+      <p>📸 Instagram: <a href="https://instagram.com/aprt_official_" target="_blank">@aprt_official_</a></p>
+    </section>
+
+    <footer>
+      Wszystkie prawa ale kto to czyta.<br />
+      © 2025 AMATEUR POLISH RACING TEAM
+    </footer>
+  </div>
+  <section id="iracing" style="width: 100%; padding: 60px 20px; background-color: #0e0e0e; color: white; font-family: sans-serif;">
+  <h2 style="text-align: center; font-size: 36px; margin-bottom: 40px;">Poznaj naszych kierowców</h2>
+
+  <!-- Kategoria iRacing -->
+  <div style="max-width: 1000px; margin: auto; margin-bottom: 60px;">
+    <h3 style="font-size: 28px; border-left: 4px solid #ff0000; padding-left: 12px; margin-bottom: 20px;">iRacing</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+      <div style="flex: 1 1 250px; background: #1a1a1a; padding: 20px; border-radius: 10px;">
+        <h4 style="margin-top: 0;">Mateusz "Speedster" Kowalski</h4>
+        <p>Doświadczenie: 3 lata</p>
+        <p>Specjalność: Torowe mistrzostwa</p>
+      </div>
+
+      <div style="flex: 1 1 250px; background: #1a1a1a; padding: 20px; border-radius: 10px;">
+        <h4 style="margin-top: 0;">Kamil "DraftKing" Bąk</h4>
+        <p>Doświadczenie: 2 lata</p>
+        <p>Specjalność: Jazda w tunelu aerodynamicznym</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kategoria Karting -->
+  <div style="max-width: 1000px; margin: auto;">
+    <h3 style="font-size: 28px; border-left: 4px solid #00cc66; padding-left: 12px; margin-bottom: 20px;">Karting</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+      <div style="flex: 1 1 250px; background: #1a1a1a; padding: 20px; border-radius: 10px;">
+        <h4 style="margin-top: 0;">Jan "Rakieta" Nowak</h4>
+        <p>Doświadczenie: 4 lata</p>
+        <p>Specjalność: Sprinty i szybkie reakcje</p>
+      </div>
+
+      <div style="flex: 1 1 250px; background: #1a1a1a; padding: 20px; border-radius: 10px;">
+        <h4 style="margin-top: 0;">Michał "Turbo" Lis</h4>
+        <p>Doświadczenie: 1.5 roku</p>
+        <p>Specjalność: Zakręty i technika</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
